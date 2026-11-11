@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="نموذج أولي عربي لإدارة الحسابات المالية للمستشفيات">
+  <title>HealthRev | حسابات المستشفى</title>
+  <style>
+    :root{font-family:Tahoma,Arial,sans-serif;color:#172b4d;background:#f4f7fb;font-synthesis:none;--navy:#102a43;--blue:#2878d0;--muted:#718096;--line:#e6edf5;--green:#138a62;--red:#c44343}
+    *{box-sizing:border-box}body{margin:0}button,input,select{font:inherit}button{cursor:pointer}.layout{min-height:100vh;display:grid;grid-template-columns:250px 1fr}.sidebar{background:var(--navy);color:#fff;padding:24px 16px}.brand{font-size:20px;font-weight:700;padding:5px 12px 28px}.brand small{display:block;color:#9fb3c8;font-size:12px;font-weight:400;margin-top:8px}.nav{display:grid;gap:6px}.nav button{border:0;background:transparent;color:#d9e5f1;text-align:right;padding:12px;border-radius:8px}.nav button:hover,.nav button.active{background:#234565;color:#fff}.nav .icon{display:inline-block;width:28px}.sidebar-note{font-size:12px;color:#b9c9d8;line-height:1.8;margin:32px 12px 0}.main{min-width:0}.topbar{height:74px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 30px}.topbar h1{font-size:19px;margin:0}.user{color:var(--muted);font-size:13px}.content{padding:26px 30px;max-width:1450px;margin:auto}.page-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}.page-heading h2{margin:0;font-size:21px}.sub{color:var(--muted);font-size:13px;margin-top:7px}.btn{border:0;background:var(--blue);color:#fff;border-radius:8px;padding:10px 15px}.btn.secondary{background:#e8f1fb;color:#225f9e}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-bottom:20px}.card,.panel{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px}.card-label{color:var(--muted);font-size:13px}.card-value{font-size:25px;font-weight:700;margin:12px 0 5px}.card-foot{font-size:12px;color:var(--muted)}.good{color:var(--green)}.bad{color:var(--red)}.grid{display:grid;grid-template-columns:1.5fr 1fr;gap:16px}.panel h3{margin:0 0 16px;font-size:16px}.barrow{display:grid;grid-template-columns:80px 1fr 85px;gap:10px;align-items:center;margin:15px 0;font-size:12px}.bar{height:9px;background:#edf2f7;border-radius:8px;overflow:hidden}.bar i{display:block;height:100%;background:#4b91da;border-radius:8px}.list{display:grid;gap:12px}.list-item{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:10px;font-size:13px}.list-item:last-child{border:0;padding:0}.toolbar{display:flex;gap:10px;margin-bottom:14px}.toolbar input{flex:1;min-width:150px}.field,input,select{border:1px solid #d8e1eb;border-radius:7px;padding:10px;background:#fff;color:#172b4d}.table-wrap{overflow:auto;background:#fff;border:1px solid var(--line);border-radius:10px}table{width:100%;border-collapse:collapse;min-width:650px}th,td{text-align:right;padding:13px 15px;border-bottom:1px solid var(--line);font-size:13px;white-space:nowrap}th{background:#f8fafc;color:#63758a;font-weight:600}tbody tr:last-child td{border-bottom:0}.badge{display:inline-block;padding:5px 9px;border-radius:20px;font-size:11px;background:#e8f6ef;color:#18734e}.badge.pending{background:#fff4db;color:#936700}.badge.cancel{background:#fdeaea;color:#a33}.empty{text-align:center;color:var(--muted);padding:30px}.hidden{display:none!important}.modal-backdrop{position:fixed;inset:0;background:#102a4377;display:grid;place-items:center;padding:18px;z-index:5}.modal{width:min(520px,100%);background:#fff;padding:22px;border-radius:12px}.modal h3{margin:0 0 18px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.form-grid label{display:grid;gap:6px;font-size:12px;color:var(--muted)}.form-grid .wide{grid-column:1/-1}.modal-actions{display:flex;gap:8px;justify-content:flex-start;margin-top:18px}.footnote{font-size:11px;color:var(--muted);margin-top:16px;line-height:1.8}
+    @media(max-width:900px){.layout{grid-template-columns:1fr}.sidebar{padding:12px}.brand{padding:7px 10px 12px}.brand small,.sidebar-note{display:none}.nav{display:flex;overflow:auto}.nav button{white-space:nowrap;padding:9px}.topbar{height:60px;padding:0 16px}.content{padding:20px 16px}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.grid{grid-template-columns:1fr}}
+    @media(max-width:520px){.cards{gap:9px}.card{padding:13px}.card-value{font-size:20px}.page-heading{align-items:flex-start;flex-direction:column}.form-grid{grid-template-columns:1fr}.form-grid .wide{grid-column:auto}.topbar h1{font-size:16px}}
+  </style>
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="brand">HealthRev <small>النظام المالي للمستشفى</small></div>
+    <nav class="nav" aria-label="التنقل الرئيسي">
+      <button class="active" data-page="dashboard"><span class="icon">▦</span>لوحة التحكم</button>
+      <button data-page="invoices"><span class="icon">▤</span>الفواتير</button>
+      <button data-page="payments"><span class="icon">⇄</span>المدفوعات</button>
+      <button data-page="expenses"><span class="icon">↘</span>المصروفات</button>
+      <button data-page="patients"><span class="icon">♙</span>المرضى</button>
+      <button data-page="reports"><span class="icon">▥</span>التقارير</button>
+    </nav>
+    <p class="sidebar-note">نسخة تجريبية للواجهة. البيانات تُحفظ محلياً في هذا المتصفح فقط، وليست نظاماً إنتاجياً أو قاعدة بيانات مشتركة.</p>
+  </aside>
+  <main class="main">
+    <header class="topbar"><h1 id="top-title">لوحة التحكم</h1><div class="user">إدارة الحسابات　|　مدير النظام</div></header>
+    <div class="content">
+      <section id="dashboard-page" class="page">
+        <div class="page-heading"><div><h2>ملخص الأداء المالي</h2><div class="sub" id="today"></div></div><button class="btn" data-open="invoice">＋ فاتورة جديدة</button></div>
+        <div class="cards" id="summary-cards"></div>
+        <div class="grid">
+          <div class="panel"><h3>الإيرادات والمصروفات (آخر 7 أيام)</h3><div id="weekly-chart"></div></div>
+          <div class="panel"><h3>آخر العمليات</h3><div class="list" id="recent-list"></div></div>
+        </div>
+        <p class="footnote">ملاحظة: هذه نسخة أولية للتجربة. الحسابات المعروضة غير معتمدة محاسبياً ولا تُغني عن مراجعة محاسب مختص.</p>
+      </section>
+      <section id="invoices-page" class="page hidden"><div class="page-heading"><div><h2>الفواتير</h2><div class="sub">إدارة فواتير الخدمات والمبالغ المستحقة</div></div><button class="btn" data-open="invoice">＋ فاتورة جديدة</button></div><div class="toolbar"><input class="search" data-table="invoices-table" placeholder="ابحث برقم الفاتورة أو اسم المريض"></div><div class="table-wrap"><table id="invoices-table"><thead><tr><th>رقم الفاتورة</th><th>المريض</th><th>التاريخ</th><th>الإجمالي</th><th>المدفوع</th><th>الحالة</th></tr></thead><tbody></tbody></table></div></section>
+      <section id="payments-page" class="page hidden"><div class="page-heading"><div><h2>المدفوعات</h2><div class="sub">سجل التحصيلات حسب وسيلة الدفع</div></div></div><div class="table-wrap"><table id="payments-table"><thead><tr><th>التاريخ</th><th>رقم الفاتورة</th><th>المريض</th><th>طريقة الدفع</th><th>المبلغ</th></tr></thead><tbody></tbody></table></div></section>
+      <section id="expenses-page" class="page hidden"><div class="page-heading"><div><h2>المصروفات</h2><div class="sub">تسجيل ومتابعة مصروفات المنشأة</div></div><button class="btn" data-open="expense">＋ مصروف جديد</button></div><div class="toolbar"><input class="search" data-table="expenses-table" placeholder="ابحث في المصروفات"></div><div class="table-wrap"><table id="expenses-table"><thead><tr><th>التاريخ</th><th>البند</th><th>البيان</th><th>المبلغ</th></tr></thead><tbody></tbody></table></div></section>
+      <section id="patients-page" class="page hidden"><div class="page-heading"><div><h2>المرضى</h2><div class="sub">قائمة المرضى المسجلين على الفواتير</div></div></div><div class="toolbar"><input class="search" data-table="patients-table" placeholder="ابحث باسم المريض أو رقم الهاتف"></div><div class="table-wrap"><table id="patients-table"><thead><tr><th>اسم المريض</th><th>رقم الهاتف</th><th>عدد الفواتير</th><th>إجمالي الفواتير</th><th>الرصيد المستحق</th></tr></thead><tbody></tbody></table></div></section>
+      <section id="reports-page" class="page hidden"><div class="page-heading"><div><h2>التقارير المالية</h2><div class="sub">ملخص مبسط اعتماداً على البيانات التجريبية المسجلة</div></div></div><div class="cards" id="report-cards"></div><div class="panel"><h3>ملخص المدفوعات حسب الطريقة</h3><div id="payment-summary" class="list"></div></div><p class="footnote">لا تشمل هذه النسخة قيوداً مزدوجة أو إقفال فترات أو تكامل التأمين. يلزم استكمالها ومراجعتها قبل الاستخدام الفعلي.</p></section>
+    </div>
+  </main>
+</div>
+<div id="modal-root"></div>
+<script>
+(() => {
+  const KEY='healthrev-accounting-demo-v1';
+  const seed={invoices:[
+    {id:'INV-1001',patient:'سارة أحمد',date:'2026-11-11',total:1250,paid:1250},
+    {id:'INV-1002',patient:'محمد علي',date:'2026-11-11',total:840,paid:500},
+    {id:'INV-1003',patient:'منى خالد',date:'2026-11-10',total:2100,paid:0},
+    {id:'INV-1004',patient:'أحمد حسن',date:'2026-11-09',total:560,paid:560}
+  ],payments:[
+    {date:'2026-11-11',invoice:'INV-1001',patient:'سارة أحمد',method:'نقدي',amount:1250},
+    {date:'2026-11-11',invoice:'INV-1002',patient:'محمد علي',method:'بطاقة',amount:500},
+    {date:'2026-11-09',invoice:'INV-1004',patient:'أحمد حسن',method:'تحويل بنكي',amount:560}
+  ],expenses:[
+    {date:'2026-11-11',category:'مستلزمات طبية',description:'مستلزمات العيادات',amount:320},
+    {date:'2026-11-10',category:'صيانة',description:'صيانة أجهزة',amount:450},
+    {date:'2026-11-08',category:'مرافق',description:'فاتورة كهرباء',amount:280}
+  ]};
+  let data;try{data=JSON.parse(localStorage.getItem(KEY))||seed}catch{data=seed}
+  const money=n=>new Intl.NumberFormat('ar-EG',{style:'currency',currency:'EGP',maximumFractionDigits:2}).format(Number(n)||0);
+  const escapeHtml=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const save=()=>localStorage.setItem(KEY,JSON.stringify(data));
+  const status=i=>i.paid>=i.total?'<span class="badge">مدفوعة</span>':i.paid>0?'<span class="badge pending">مدفوعة جزئياً</span>':'<span class="badge pending">غير مدفوعة</span>';
+  const sum=(arr,key)=>arr.reduce((a,x)=>a+Number(x[key]||0),0);
+  const render=()=>{
+    const today=new Date().toISOString().slice(0,10);document.getElementById('today').textContent='التاريخ: '+new Intl.DateTimeFormat('ar-EG',{dateStyle:'full'}).format(new Date());
+    const rev=sum(data.payments,'amount'),exp=sum(data.expenses,'amount'),due=data.invoices.reduce((a,x)=>a+Math.max(0,x.total-x.paid),0);
+    document.getElementById('summary-cards').innerHTML=[['التحصيلات',money(rev),'إجمالي المدفوعات المسجلة','good'],['المصروفات',money(exp),'إجمالي المصروفات المسجلة',''],['صافي التدفق النقدي',money(rev-exp),'التحصيلات ناقص المصروفات',rev>=exp?'good':'bad'],['مبالغ مستحقة',money(due),'على الفواتير غير المسددة','bad']].map(x=>`<div class="card"><div class="card-label">${x[0]}</div><div class="card-value">${x[1]}</div><div class="card-foot ${x[3]}">${x[2]}</div></div>`).join('');
+    document.querySelector('#invoices-table tbody').innerHTML=data.invoices.length?data.invoices.map(i=>`<tr><td>${escapeHtml(i.id)}</td><td>${escapeHtml(i.patient)}</td><td>${escapeHtml(i.date)}</td><td>${money(i.total)}</td><td>${money(i.paid)}</td><td>${status(i)}</td></tr>`).join(''):'<tr><td colspan="6" class="empty">لا توجد فواتير</td></tr>';
+    document.querySelector('#payments-table tbody').innerHTML=data.payments.length?data.payments.map(p=>`<tr><td>${escapeHtml(p.date)}</td><td>${escapeHtml(p.invoice)}</td><td>${escapeHtml(p.patient)}</td><td>${escapeHtml(p.method)}</td><td>${money(p.amount)}</td></tr>`).join(''):'<tr><td colspan="5" class="empty">لا توجد مدفوعات</td></tr>';
+    document.querySelector('#expenses-table tbody').innerHTML=data.expenses.length?data.expenses.map(e=>`<tr><td>${escapeHtml(e.date)}</td><td>${escapeHtml(e.category)}</td><td>${escapeHtml(e.description)}</td><td>${money(e.amount)}</td></tr>`).join(''):'<tr><td colspan="4" class="empty">لا توجد مصروفات</td></tr>';
+    const patients={};data.invoices.forEach(i=>{const p=patients[i.patient]||(patients[i.patient]={count:0,total:0,due:0});p.count++;p.total+=Number(i.total);p.due+=Math.max(0,i.total-i.paid)});
+    const entries=Object.entries(patients);document.querySelector('#patients-table tbody').innerHTML=entries.length?entries.map(([name,p])=>`<tr><td>${escapeHtml(name)}</td><td>—</td><td>${p.count}</td><td>${money(p.total)}</td><td>${money(p.due)}</td></tr>`).join(''):'<tr><td colspan="5" class="empty">لا توجد بيانات مرضى</td></tr>';
+    const weekly=Array.from({length:7},(_,n)=>{const d=new Date();d.setDate(d.getDate()-(6-n));const key=d.toISOString().slice(0,10);return{key,label:new Intl.DateTimeFormat('ar-EG',{weekday:'short'}).format(d),income:sum(data.payments.filter(x=>x.date===key),'amount'),expense:sum(data.expenses.filter(x=>x.date===key),'amount')}});const max=Math.max(1,...weekly.flatMap(x=>[x.income,x.expense]));
+    document.getElementById('weekly-chart').innerHTML=weekly.map(x=>`<div class="barrow"><span>${x.label}</span><div><div class="bar"><i style="width:${x.income/max*100}%"></i></div><div class="bar" style="margin-top:5px"><i style="width:${x.expense/max*100}%;background:#e08b70"></i></div></div><span>${money(x.income)}</span></div>`).join('')+'<div class="card-foot">■ التحصيلات　<span style="color:#e08b70">■ المصروفات</span></div>';
+    const recent=[...data.payments.map(x=>({label:`تحصيل ${x.patient}`,amount:x.amount,date:x.date})),...data.expenses.map(x=>({label:x.category,amount:-x.amount,date:x.date}))].sort((a,b)=>b.date.localeCompare(a.date)).slice(0,5);
+    document.getElementById('recent-list').innerHTML=recent.length?recent.map(x=>`<div class="list-item"><span>${escapeHtml(x.label)}<br><small class="card-foot">${escapeHtml(x.date)}</small></span><b class="${x.amount<0?'bad':'good'}">${money(x.amount)}</b></div>`).join(''):'<div class="empty">لا توجد عمليات بعد</div>';
+    document.getElementById('report-cards').innerHTML=[['إجمالي الفواتير',money(sum(data.invoices,'total'))],['إجمالي التحصيلات',money(rev)],['المصروفات',money(exp)],['الرصيد المستحق',money(due)]].map(x=>`<div class="card"><div class="card-label">${x[0]}</div><div class="card-value">${x[1]}</div></div>`).join('');
+    const methods={};data.payments.forEach(p=>methods[p.method]=(methods[p.method]||0)+Number(p.amount));document.getElementById('payment-summary').innerHTML=Object.entries(methods).length?Object.entries(methods).map(([m,v])=>`<div class="list-item"><span>${escapeHtml(m)}</span><b>${money(v)}</b></div>`).join(''):'<div class="empty">لا توجد مدفوعات مسجلة</div>';
+    document.querySelectorAll('.search').forEach(input=>filterTable(input));
+  };
+  function filterTable(input){const table=document.getElementById(input.dataset.table);if(!table)return;const q=input.value.trim().toLowerCase();table.querySelectorAll('tbody tr').forEach(tr=>tr.classList.toggle('hidden',!tr.textContent.toLowerCase().includes(q)))}
+  document.querySelectorAll('.nav button').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b===btn));document.querySelectorAll('.page').forEach(p=>p.classList.add('hidden'));document.getElementById(btn.dataset.page+'-page').classList.remove('hidden');document.getElementById('top-title').textContent=btn.textContent.trim()}));
+  document.querySelectorAll('.search').forEach(i=>i.addEventListener('input',()=>filterTable(i)));
+  document.addEventListener('click',e=>{const opener=e.target.closest('[data-open]');if(opener)openModal(opener.dataset.open);if(e.target.matches('[data-close]'))document.getElementById('modal-root').innerHTML=''});
+  function openModal(type){const invoice=type==='invoice';document.getElementById('modal-root').innerHTML=`<div class="modal-backdrop"><form class="modal" id="entry-form"><h3>${invoice?'إنشاء فاتورة':'تسجيل مصروف'}</h3><div class="form-grid">${invoice?`<label>اسم المريض<input name="patient" required maxlength="100"></label><label>ق��مة الفاتورة<input name="total" required type="number" min="0.01" step="0.01"></label><label>المبلغ المدفوع<input name="paid" type="number" min="0" step="0.01" value="0"></label><label>طريقة الدفع<select name="method"><option>نقدي</option><option>بطاقة</option><option>تحويل بنكي</option><option>تأمين</option></select></label>`:`<label>بند المصروف<input name="category" required maxlength="80"></label><label>المبلغ<input name="amount" type="number" min="0.01" step="0.01" required></label><label class="wide">البيان<input name="description" required maxlength="180"></label>`}<label class="wide">التاريخ<input name="date" type="date" value="${new Date().toISOString().slice(0,10)}" required></label></div><div class="modal-actions"><button class="btn" type="submit">حفظ</button><button class="btn secondary" type="button" data-close>إلغاء</button></div></form></div>`;
+    document.querySelector('.modal-backdrop').addEventListener('click',e=>{if(e.target.classList.contains('modal-backdrop'))document.getElementById('modal-root').innerHTML=''});
+    document.getElementById('entry-form').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.currentTarget),date=f.get('date');if(invoice){const total=Number(f.get('total')),paid=Number(f.get('paid')||0);if(!Number.isFinite(total)||!Number.isFinite(paid)||total<=0||paid<0||paid>total){alert('تحقق من قيمة الفاتورة والمبلغ المدفوع.');return}const id='INV-'+Date.now().toString().slice(-7),patient=f.get('patient').trim();data.invoices.unshift({id,patient,date,total,paid});if(paid>0)data.payments.unshift({date,invoice:id,patient,method:f.get('method'),amount:paid})}else{const amount=Number(f.get('amount'));if(!Number.isFinite(amount)||amount<=0){alert('أدخل مبلغاً صحيحاً.');return}data.expenses.unshift({date,category:f.get('category').trim(),description:f.get('description').trim(),amount})}save();document.getElementById('modal-root').innerHTML='';render()});
+  }
+  render();
+})();
+</script>
+</body>
+</html>
